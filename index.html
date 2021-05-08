@@ -1,0 +1,629 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Software Development Portfolio</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="20ef95f1-8954-4241-8af1-89d98d089777" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/solid_blue.png" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🖥️</span></div><h1 class="page-title">Software Development Portfolio</h1></header><div class="page-body"><h1 id="50685400-bee5-4698-9f82-6e34668d2e92" class="">Pubmed Article Search REST API </h1><p id="3eccad2c-c644-4c29-97b8-2b06de94fc7e" class="">Language: Java</p><p id="4ca99d13-caa2-4168-a017-b671471992b6" class="">Skillset: Springboot, microservices, file I/O, Lucene</p><figure id="b0a277b6-b710-4da1-bec6-4c3a69a7f042"><a href="https://github.com/lazrichardson/article-database" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">lazrichardson/article-database</div><div class="bookmark-description">Luther Richardson 04-22-2021 My application is a REST API. It takes local XML files downloaded from Pubmed and parses them using the SAX parser. It takes the article title and dates from those files and loads them into a local in-memory database, as well as a Lucene database.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/lazrichardson/article-database</div></div><img src="https://opengraph.githubassets.com/29b7aee8414805cfaad2fb9bca4e48d2156ba425a68f7d892bd297b725c12b0f/lazrichardson/article-database" class="bookmark-image"/></a></figure><p id="c6a5fc16-de4a-47e6-ba7c-f6be74613b8b" class=""><strong>Use Case</strong></p><p id="5b0b972b-b9ab-4f1e-ba5e-37f9a1e4480a" class="">My application is a REST API. It takes local XML files downloaded from Pubmed and parses them using the SAX parser. It takes the article title and dates from those files and loads them into a local in-memory database, as well as a Lucene database. Finally, it provides an endpoint for searching for those articles utilizing Spring Boot. The endpoint supports searching by a combination of keyword and start to end dates.</p><p id="a132dd0d-6679-466a-8591-ef1446db7aeb" class=""><strong>Design goals</strong></p><ul id="9895738e-d196-4b44-9cac-fdcb1fd5d3c0" class="bulleted-list"><li>Make the project extensible</li></ul><ul id="7f4742e6-89bc-4021-be4f-ff1a95e709d4" class="bulleted-list"><li>High readability of the data load + parsing process</li></ul><ul id="672c318b-2e73-4a4a-a771-b80e9f41a134" class="bulleted-list"><li>Easy to implement different searching algorithms</li></ul><ul id="e4062a40-49b4-4b95-a716-a4c63980ce09" class="bulleted-list"><li>Loose coupling between databases and parsing</li></ul><h3 id="51783ed5-b916-41df-9bd7-8cc90dcec454" class=""><strong>Patterns Utilized</strong></h3><p id="3b1054f1-c0b1-4a0f-a589-4b902a6a625b" class=""><strong>API Gateway / Microservices</strong></p><p id="25ebe053-3f44-4d03-8773-3d4f1380bee4" class="">This pattern determines the overall structure of the application. My application provides the client with an endpoint to call on an aggregation of microservices from a single location, which is through the HTML query. The user doesn&#x27;t have to call on each microservice on its own, even though many are used to return the data, in this case the search results, to the client. This allows the implementation of the microservices to change without the client needing to know.</p><p id="21d182eb-edad-4a85-8d29-5df7de4cbae0" class=""><strong>Pipeline</strong></p><p id="98f82a2f-c002-4e6f-9a4f-c37b3395b263" class="">I used this pattern to provide the behaviour for the XML parsing process in my application. The Pipeline allows for the processing of data in stages, with each step feeding directly to the next. This pattern is ideal for data processing because it greatly increases the modularity of the process, allowing for enhanced troubleshooting by enabling enhanced readability of complex operations. This pattern also supports the use of the Single Responsibility Principle (SRP)</p><p id="1d4021f2-dcaa-438a-8be5-e7edbf1f7d47" class=""><strong>Strategy</strong></p><p id="a14f728d-48d7-4369-ab9d-48f5c05fe0d2" class="">The strategy pattern is used in this application to encapsulate different searching behaviours. Each database provides the context for the search strategy.</p><p id="107c6020-183a-4497-8114-c1ac53ff6540" class=""><strong>Facade</strong></p><p id="c282cfc8-bf4e-4d43-a560-0f92d27dd1b6" class="">The database classes act as a facade for additional search complexity where search items and indexes are passed to the search methods, which also utilize the Strategy pattern.</p><h1 id="14164eb5-7e24-47a5-82c6-5060636a570b" class=""><strong>Data Science Projects</strong></h1><p id="8ebcde46-d08a-486c-8fe8-0eee78edf385" class="">This repository highlights example projects for datascience.</p><figure id="0ffd03f3-4c8f-4cc9-b722-88b4f87d8eee"><a href="https://github.com/lazrichardson/DataScienceExampleProjects" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">lazrichardson/DataScienceExampleProjects</div><div class="bookmark-description">This repository highlights my example projects for datascience. This project implements a bag of words and topic clustering using Latent Semantic Analysis This project uses the IndieGogo Dataset ( https://webrobots.io/indiegogo-dataset/) to download at least 5 files. It takes the &quot;title&quot; for each project in the dataset.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/lazrichardson/DataScienceExampleProjects</div></div><img src="https://opengraph.githubassets.com/eb8ae2a4199e71476555c0ed0811c883edc3d02bbc74e712b144ef1b5d86e2c8/lazrichardson/DataScienceExampleProjects" class="bookmark-image"/></a></figure><h3 id="6519ac22-4271-4209-98a7-38397220d1ee" class=""><strong>Bag of Words and Latent Semantic Analysis</strong></h3><p id="f11a8641-8063-4f70-ba4e-7ec3b9729200" class="">This project implements a bag of words and topic clustering using Latent Semantic Analysis</p><p id="61b22e45-8da6-4065-a533-4403f15e45a6" class="">This project uses the IndieGogo Dataset (<a href="https://webrobots.io/indiegogo-dataset/">https://webrobots.io/indiegogo-dataset/</a>) to download at least 5 files. It takes the “title” for each project in the dataset.</p><p id="42b5e255-5ce5-4f28-867e-644c2b4d6eae" class="">Then, the article titles are put into a “bag of words” format. Finally, Latent Semantic Analysis (LSA) is used to cluser them into related topics.</p><h3 id="de0a390a-3bd4-4523-9ff4-7265893d98fc" class=""><strong>Dimensionality Reduction</strong></h3><p id="cfe505cd-39c3-452e-8862-accacf29ca06" class="">This project is focused on dimensionality reduction of textual data.</p><ul id="704f200b-692c-459b-a17b-dbbf6f67545e" class="bulleted-list"><li>This project downloads at least 200 Pubmed articles. 100 include the term “obesity”, and the other 100 include the term “cancer”.</li></ul><ul id="b3040b03-c1c2-4df8-8b8a-7547d6b5678d" class="bulleted-list"><li>Their textual corpus is analyzed to feed them into a dimensionality reduction method.</li></ul><ul id="78334ea9-30a9-459e-8799-7ab34a97cb5d" class="bulleted-list"><li>Finally, Principal Component Analysis (PCA), T-distributed stochastic neighbor embedding (tSNE), and Uniform Manifold Approximation and Projection for Dimension Reduction (UMAP) algorithms are applied to the dataset to visualize the</li></ul><h3 id="04883142-adf1-476c-8aea-4cc594254aec" class=""><strong>Graph Analysis</strong></h3><p id="9ab2247a-4cc0-4c49-9c63-cfd4a358cabf" class="">This project explores different approaches to graph analysis.</p><ul id="86742186-fef3-4e3b-a216-7b4ab3b16a93" class="bulleted-list"><li>Dijkstra&#x27;s shortest path visualized on a graph.</li></ul><ul id="0ec4df10-70e2-460e-93f5-aced2e446686" class="bulleted-list"><li>Prim&#x27;s, and Kruskal&#x27;s minimum spanning tree algorithms to find the MST between two arbitrary nodes</li></ul><ul id="3b4778c5-4af3-4b1e-a9a4-d1a640ab2eae" class="bulleted-list"><li>Visualization of Page rank and HITS algorithm to order the graph nodes based on their importance</li></ul><ul id="3c3d6393-775a-45c1-bfb7-01d85badf735" class="bulleted-list"><li>Visualization of the Louvain and Leiden algorithms for community detection</li></ul><h3 id="0ec3a325-0801-4f16-9c86-c8e7043a40a8" class=""><strong>Sentiment Analysis</strong></h3><p id="64c5e416-a871-4212-b604-142ab5b04bfd" class="">This project collects tweets about soccer to analyze their sentiment, comparing results of Afinn and FastText.</p><ul id="f68d8f12-e926-4ab6-b872-1b1d2f8a2fee" class="bulleted-list"><li>Search, clean, and load the tweets using the Twitter API</li></ul><ul id="ac13ec57-9ee9-4f24-8e5e-6ba3613ff0a6" class="bulleted-list"><li>Calculate sentiments using Afinn</li></ul><ul id="b77b7c60-0532-4297-9b1e-d3c5a51239b4" class="bulleted-list"><li>Train a FastText model</li></ul><ul id="ffe28dbb-2b90-4e4c-b63f-8600cfc15e27" class="bulleted-list"><li>Find sentiments using FastText model</li></ul><h3 id="221eca4a-13ca-4543-89af-410294d2465b" class=""><strong>Distribution Analysis and Testing</strong></h3><p id="32ae2430-97a5-44ea-b29c-772328bc1840" class="">This project is focused on exploring different testing methods using the IndieGogo dataset</p><p id="097cbb57-29a8-4a8e-b7be-199649b7c8dd" class="">It demonstrates:</p><ul id="485d67f9-1bd5-4286-b5fe-6ba010e07dc0" class="bulleted-list"><li>Testing for Gaussian distributions using Q-Q plots, and the Shapiro Wilk test</li></ul><ul id="158bdba9-59e2-4cf4-8b04-e9390145131d" class="bulleted-list"><li>Parametric testing using the Welch Two Sample t-test</li></ul><ul id="4f1f5f1e-4e37-4804-8e64-0d3f45ee4118" class="bulleted-list"><li>Non-Parametric testing using Two-sample Kolmogorov-Smirnov test and Wilcoxon rank sum test with continuity correction</li></ul><ul id="f5eeb093-3b17-49cc-9e74-515c134393d8" class="bulleted-list"><li>Calculation of effect size to quantify the magnitude of differences using Cohen&#x27;s D</li></ul><ul id="ff4fda68-a031-46e2-92ee-e8196cd0dfd3" class="bulleted-list"><li>Correlation Coefficient testing (Pearson, Spearman, KendallTau)</li></ul><h1 id="c56e0e0e-dfe1-4c61-875b-0af3415f957e" class="">Meme Generator</h1><p id="4055e2fb-0c27-4dad-b49f-8d62f7f33b23" class="">This project is an example bootstrap web application.</p><p id="740cad7b-41d6-4237-b48f-45aae639b25f" class="">To see the live app, navigate to: <a href="https://lazrichardson.github.io/MemeGenerator/">https://lazrichardson.github.io/MemeGenerator/</a></p><figure id="a16e1be1-a23e-4c0f-9bf0-a6fa7b14fad3"><a href="https://github.com/lazrichardson/MemeGenerator" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">lazrichardson/MemeGenerator</div><div class="bookmark-description">Contribute to lazrichardson/MemeGenerator development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/lazrichardson/MemeGenerator</div></div><img src="https://opengraph.githubassets.com/405ff685e9c40488aedb2fae5628dc9fa2db1c466721fa1f1ca1d19858968c6e/lazrichardson/MemeGenerator" class="bookmark-image"/></a></figure><h3 id="708d59d8-6854-4285-a09e-2acec814c436" class=""><strong>Key details</strong></h3><ul id="ed237b42-074b-4353-9c4c-354f73606920" class="bulleted-list"><li>All local - no back end to store images</li></ul><ul id="aabd4a7e-7b72-4e0e-a389-0c8cfc9744f6" class="bulleted-list"><li>Print / share your image directly from the app</li></ul><ul id="97e1c0b6-f80a-447b-9b61-c9693924d759" class="bulleted-list"><li>Ability to upload your own image</li></ul><ul id="7c8eea3e-f075-47de-ab5f-ed1f6f742aa0" class="bulleted-list"><li>Provide multiple template memes for users to choose from</li></ul><h2 id="6670e57b-3d93-4e69-8f50-a5b7bff5878d" class="">Processor Pipeline Simulation</h2><p id="00926b90-f227-4cfe-b26f-48e8530b4883" class="">Language: Java</p><p id="e4e0ae2f-0b5a-4543-904e-9f9b9611f782" class="">Skillset: Bit Shifting, Pipelined Datapath</p><p id="2bd4eeb7-6de0-40a5-aee6-ce0f6e28b650" class="">Description: Simulates a pipelined datapath for selected machine language instructions </p><figure id="fc5090ee-8de5-451f-ba7a-28c499b8795a"><a href="https://github.com/lazrichardson/PipelineSim/tree/master/src" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">lazrichardson/PipelineSim</div><div class="bookmark-description">Implements a limited simulation of a pipelined datapath. - lazrichardson/PipelineSim</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/lazrichardson/PipelineSim/tree/master/src</div></div><img src="https://opengraph.githubassets.com/5a5ef3d437bebd8b2ab2533ab424ddb58c8be34b819beeaebce2f06b95a2d6c4/lazrichardson/PipelineSim" class="bookmark-image"/></a></figure><h2 id="8afdcd09-df73-4294-9d8b-af92dade1a03" class="">Shopping List Android App</h2><p id="2ddd8e46-b535-4cd9-94e2-616c757b44e4" class="">Language: Java</p><p id="91592488-3377-4023-ad12-8150d9e443ec" class="">Skillset: Android Application Development</p><p id="45da4acb-7784-4d08-b6e1-bc549baada50" class="">Description: The user can input a list of items and the application will purchase items for the user based on their input budget.</p><figure id="3561192c-764c-49de-b0ad-086f08569362"><a href="https://github.com/lazrichardson/Shopping-List-Final-Project" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">lazrichardson/Shopping-List-Final-Project</div><div class="bookmark-description">Final Project for Java Programming at BU This is my final Project for Java Programming which implements a shopping list in an android application The user can input a list of items and the application will purchase items for the user based on their input budget. You can&#x27;t perform that action at this time.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/lazrichardson/Shopping-List-Final-Project</div></div><img src="https://opengraph.githubassets.com/52141f000a2a64e987d1ac11b43960364cbc059395f4cc868bd0e33597cc4230/lazrichardson/Shopping-List-Final-Project" class="bookmark-image"/></a></figure><p id="31699989-6e3d-489c-ad56-17224caebe7a" class="">
+</p><p id="4a90e7f5-e70c-4b20-88a2-8ef24a991723" class="">
+</p></div></article></body></html>
