@@ -1,6 +1,3 @@
-# Software Development portfolio
-
-
 ## Pubmed Article Search REST API
 
 Language: Java
